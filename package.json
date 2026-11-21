@@ -1,0 +1,58 @@
+{
+  "name": "sewa-bilik-desktop",
+  "version": "2.1.0",
+  "description": "Sistem Sewa Bilik",
+  "author": "Sewa Bilik",
+  "main": "electron/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist:win": "electron-builder --win --publish never",
+    "dist:mac": "electron-builder --mac --publish never"
+  },
+  "devDependencies": {
+    "electron": "^43.0.0",
+    "electron-builder": "latest"
+  },
+  "build": {
+    "appId": "my.sewabilik.app",
+    "productName": "Sistem Sewa Bilik",
+    "files": [
+      "electron/**",
+      "app/**",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "mac": {
+      "target": [
+        {
+          "target": "dmg",
+          "arch": [
+            "arm64",
+            "x64"
+          ]
+        }
+      ],
+      "category": "public.app-category.business",
+      "minimumSystemVersion": "12.0"
+    }
+  }
+}
