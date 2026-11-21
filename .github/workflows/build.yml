@@ -1,0 +1,24 @@
+name: Bina aplikasi desktop
+on: workflow_dispatch
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install
+      - run: npm run dist:win
+        if: matrix.os == 'windows-latest'
+      - run: npm run dist:mac
+        if: matrix.os == 'macos-latest'
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sewa-bilik-${{ matrix.os }}
+          retention-days: 7
+          path: |
+            dist/*.exe
+            dist/*.dmg
