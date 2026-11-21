@@ -1,3 +1,4 @@
+[README.md](https://github.com/user-attachments/files/35197434/README.md)
 # Sistem Sewa Bilik: Aplikasi Desktop (Windows .exe dan Mac .dmg)
 
 Aplikasi ini membungkus sistem sewa bilik dalam tetingkap sendiri. Di dalamnya berjalan pelayan yang sama seperti edisi web, jadi iPhone atau peranti lain dalam Wi-Fi yang sama masih boleh membuka sistem melalui pelayar.
